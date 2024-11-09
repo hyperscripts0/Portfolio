@@ -203,3 +203,49 @@ footer {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--secondary-color);
 }
+
+/* Custom Cursor Styles */
+#custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(255, 0, 122, 0.8); /* Pink color */
+  border: 2px solid #ff6b6b;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 10px rgba(255, 0, 122, 0.5);
+  z-index: 1000;
+  mix-blend-mode: difference;
+}
+
+/* Click Ripple Effect */
+#click-effect {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 0, 122, 0.5);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 999;
+}
+
+/* Click Animation */
+@keyframes click-ripple {
+  0% {
+    width: 10px;
+    height: 10px;
+    opacity: 1;
+  }
+  100% {
+    width: 80px;
+    height: 80px;
+    opacity: 0;
+  }
+}

@@ -7,9 +7,13 @@
   <link rel="icon" type="image/x-icon" href="/image/fav.png">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
   <script src="script.js" defer></script>
 </head>
 <body>
+  <div id="custom-cursor"></div>
+  <div id="click-effect"></div>
+
   <!-- Navigation Bar -->
   <nav class="navbar">
     <div class="container">
@@ -31,6 +35,10 @@
       <p>I'm a Creative Developer Focused On FiveM Development And Scripting, Also Full Stack Web Developer.</p>
     </div>
   </section>
+
+  <script>
+    new cursoreffects.snowflakeCursor();
+  </script>
 
   <footer>
     <p>&copy; iMrShadow. All rights reserved.</p>

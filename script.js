@@ -56,3 +56,30 @@ function eraseText() {
 document.addEventListener("DOMContentLoaded", () => {
   typeWriter();
 });
+
+// Custom Cursor
+const customCursor = document.getElementById("custom-cursor");
+const clickEffect = document.getElementById("click-effect");
+
+// Update Cursor Position
+document.addEventListener("mousemove", (e) => {
+  const x = e.clientX;
+  const y = e.clientY;
+  customCursor.style.left = `${x}px`;
+  customCursor.style.top = `${y}px`;
+});
+
+// Click Animation
+document.addEventListener("click", (e) => {
+  const x = e.clientX;
+  const y = e.clientY;
+
+  // Set click effect position
+  clickEffect.style.left = `${x}px`;
+  clickEffect.style.top = `${y}px`;
+
+  // Trigger ripple animation
+  clickEffect.style.animation = "none";
+  void clickEffect.offsetWidth; // Trigger reflow
+  clickEffect.style.animation = "click-ripple 0.4s ease-out";
+});
