@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Me - iMrShadow</title>
+  <link rel="icon" type="image/x-icon" href="/image/fav.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
+  <style>
+    /* About Page Styles */
+    .about-section {
+      padding: 1.8rem 0.9rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+      color: var(--text-color);
+    }
+
+    .about-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .profile-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+      border: 3px solid var(--btn-bg-color);
+    }
+
+    .about-text {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      max-width: 800px;
+      color: var(--text-color);
+    }
+
+    .skills-section {
+      margin-top: 3rem;
+    }
+
+    .skills-title {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 2rem;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .skill-card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 1rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .skill-icon {
+      font-size: 2rem;
+      color: var(--btn-bg-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-name {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: var(--text-color);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">iMrShadow</a>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="projects.html">Projects</a>
+        <a href="contact.html">Contact</a>
+        <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- About Section -->
+  <section class="about-section">
+    <div class="about-container">
+      <img src="/image/dp.jpg" alt="Profile Image" class="profile-image">
+      <h2>About Me</h2>
+      <p class="about-text">
+        Hello, I'm iMrShadow, a passionate developer with expertise in crafting interactive and visually appealing websites. I have a strong background in both front-end and back-end development, and I love building projects that solve real-world problems.
+      </p>
+    </div>
+
+    <!-- Skills Section -->
+    <div class="skills-section">
+      <h3 class="skills-title">My Skills</h3>
+      <div class="skills-grid">
+        <!-- Skill Card 1 -->
+        <div class="skill-card">
+          <i class="fas fa-code skill-icon"></i>
+          <p class="skill-name">JavaScript</p>
+        </div>
+        <!-- Skill Card 2 -->
+        <div class="skill-card">
+          <i class="fab fa-html5 skill-icon"></i>
+          <p class="skill-name">HTML5</p>
+        </div>
+        <!-- Skill Card 3 -->
+        <div class="skill-card">
+          <i class="fab fa-css3-alt skill-icon"></i>
+          <p class="skill-name">CSS3</p>
+        </div>
+        <!-- Skill Card 4 -->
+        <div class="skill-card">
+          <i class="fab fa-react skill-icon"></i>
+          <p class="skill-name">React</p>
+        </div>
+        <!-- Skill Card 5 -->
+        <div class="skill-card">
+          <i class="fab fa-node skill-icon"></i>
+          <p class="skill-name">Node.js</p>
+        </div>
+        <!-- Skill Card 6 -->
+        <div class="skill-card">
+          <i class="fas fa-database skill-icon"></i>
+          <p class="skill-name">Database</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script>
+    new cursoreffects.snowflakeCursor();
+  </script>
+  <script>
+    new cursoreffects.snowflakeCursor();
+  </script>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 iMrShadow. All rights reserved.</p>
+  </footer>
+
+<script src="script.js"></script>
+</body>
+</html>
