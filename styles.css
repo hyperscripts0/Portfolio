@@ -211,12 +211,12 @@ footer {
   left: 0;
   width: 20px;
   height: 20px;
-  background-color: rgba(255, 0, 122, 0.8); /* Pink color */
-  border: 2px solid #ff6b6b;
+  background-color: rgba(27, 144, 211, 0.8); /* Pink color */
+  border: 2px solid #083a97;
   border-radius: 50%;
   pointer-events: none;
   transform: translate(-50%, -50%);
-  box-shadow: 0 0 10px rgba(255, 0, 122, 0.5);
+  box-shadow: 0 0 10px rgba(92, 5, 192, 0.541);
   z-index: 1000;
   mix-blend-mode: difference;
 }
