@@ -1,0 +1,193 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Color Variables */
+:root {
+  --bg-color: #0d1b2a;
+  --text-color: #e0e1dd;
+  --accent-color: #1b263b;
+  --secondary-color: #415a77;
+  --hero-bg-color: #1b263b;
+  --btn-bg-color: #778da9;
+  --btn-text-color: #e0e1dd;
+  --navbar-bg: #1b263b;
+  --navbar-text-color: #e0e1dd;
+  --card-bg-color: #415a77;
+  --border-color: #415a77;
+}
+
+body.dark {
+  --bg-color: #f0f4f8;
+  --text-color: #0d1b2a;
+  --accent-color: #e0e1dd;
+  --secondary-color: #778da9;
+  --hero-bg-color: #e0e1dd;
+  --btn-bg-color: #1b263b;
+  --btn-text-color: #f0f4f8;
+  --navbar-bg: #ffffff;
+  --navbar-text-color: #0d1b2a;
+  --card-bg-color: #e0e1dd;
+  --border-color: #ddd;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: var(--navbar-bg);
+  padding: 1.5rem 0;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.nav-logo {
+  font-size: 1.8rem;
+  color: var(--navbar-text-color);
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.nav-links a {
+  color: var(--navbar-text-color);
+  margin-left: 1.5rem;
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--btn-bg-color);
+}
+
+#theme-toggle {
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: var(--navbar-text-color);
+  background: none;
+  border: none;
+  margin-left: 1.5rem;
+}
+
+/* Hero Section */
+.hero {
+  background: var(--hero-bg-color);
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.hero-content p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.5rem;
+  color: var(--btn-text-color);
+  background: var(--btn-bg-color);
+  border-radius: 5px;
+  text-decoration: none;
+  transition: transform 0.3s, background-color 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+footer {
+  background: var(--navbar-bg);
+  padding: 1.5rem 0;
+  text-align: center;
+  color: var(--navbar-text-color);
+  font-size: 0.9rem;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--accent-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--btn-bg-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-color);
+}
+
+.typewriter {
+  font-size: 3rem; /* Increase font size for visibility */
+  font-weight: bold;
+  color: var(--btn-bg-color);
+  display: inline-block;
+  border-right: 3px solid var(--btn-bg-color); /* Blinking cursor */
+  padding-right: 8px;
+  margin-top: 1rem;
+  animation: blink-caret 0.7s step-end infinite;
+  font-family: 'Noto Sans', sans-serif; /* Noto Sans supports various scripts */
+}
+
+/* Adjustments for specific scripts */
+.typewriter[lang="hi"] { /* Hindi */
+  font-family: 'Noto Sans Devanagari', sans-serif;
+}
+
+.typewriter[lang="ja"] { /* Japanese */
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.typewriter[lang="zh"] { /* Chinese */
+  font-family: 'Noto Sans SC', sans-serif;
+}
+
+.typewriter[lang="ko"] { /* Korean */
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* Blinking cursor effect */
+@keyframes blink-caret {
+  50% {
+    border-color: transparent;
+  }
+}
