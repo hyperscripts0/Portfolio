@@ -11,6 +11,7 @@ body {
   line-height: 1.6;
   color: var(--text-color);
   background-color: var(--bg-color);
+  overflow-y: hidden; /* Disable vertical scrolling */
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -95,7 +96,7 @@ body.dark {
 /* Hero Section */
 .hero {
   background: var(--hero-bg-color);
-  height: 100vh;
+  height: calc(100vh - 4rem); /* Full viewport height minus navbar height */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -103,28 +104,40 @@ body.dark {
   color: var(--text-color);
   transition: background-color 0.3s, color 0.3s;
   background: radial-gradient(circle, rgba(45, 45, 112, 0.7), var(--hero-bg-color));
-  animation: backgroundAnimation 12s infinite alternate;
 }
 
-@keyframes backgroundAnimation {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem; /* Adds space between elements */
 }
 
 .hero-content h1 {
   font-size: 2.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   font-weight: bold;
 }
 
-.hero-content p {
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
+.typewriter {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--btn-bg-color);
+  display: inline-block;
+  border-right: 2px solid var(--btn-bg-color);
+  padding-right: 8px;
+  margin-top: 0;
+  animation: blink-caret 0.6s step-end infinite;
 }
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  text-align: center;
+  max-width: 800px;
+}
+
 
 /* Typewriter Effect */
 .typewriter {
@@ -136,14 +149,7 @@ body.dark {
   padding-right: 8px;
   margin-top: 1rem;
   animation: blink-caret 0.6s step-end infinite;
-  font-family: 'Noto Sans', sans-serif;
 }
-
-/* Adjustments for specific scripts */
-.typewriter[lang="hi"] { font-family: 'Noto Sans Devanagari', sans-serif; }
-.typewriter[lang="ja"] { font-family: 'Noto Sans JP', sans-serif; }
-.typewriter[lang="zh"] { font-family: 'Noto Sans SC', sans-serif; }
-.typewriter[lang="ko"] { font-family: 'Noto Sans KR', sans-serif; }
 
 @keyframes blink-caret {
   50% {
@@ -162,13 +168,12 @@ body.dark {
   border-radius: 8px;
   text-decoration: none;
   font-size: 1.2rem;
-  transition: transform 0.3s, background-color 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, background-color 0.3s;
 }
 
 .btn:hover {
   transform: scale(1.05);
   background: #778da9;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Footer */
