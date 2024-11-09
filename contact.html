@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me - iMrShadow</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    /* Contact Form Styles */
+    .contact-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      padding: 2rem;
+      background: var(--bg-color);
+    }
+
+    .contact-container {
+      max-width: 500px;
+      width: 90%;
+      padding: 2rem;
+      border-radius: 15px;
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .contact-container h2 {
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: var(--text-color);
+      text-align: center;
+    }
+
+    .form-group {
+      position: relative;
+      margin-bottom: 1.5rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      color: var(--text-color);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem 2.5rem; /* Adjusted padding for icon */
+      border-radius: 10px;
+      border: none;
+      background: rgba(255, 255, 255, 0.2);
+      color: var(--text-color);
+      font-size: 1rem;
+      outline: none;
+      transition: all 0.3s;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      background: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+    }
+
+    .form-icon {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      color: var(--secondary-color);
+      font-size: 1.2rem;
+    }
+
+    .btn-submit {
+      width: 100%;
+      padding: 0.8rem;
+      font-size: 1.1rem;
+      color: #fff;
+      background: var(--btn-bg-color);
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .btn-submit:hover {
+      background-color: #ff3b3b;
+      transform: scale(1.05);
+    }
+
+    .btn-submit:active {
+      transform: scale(0.98);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">iMrShadow</a>
+      <div class="nav-links">
+        <a href="index.html#about">About</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="contact.html">Contact</a>
+        <button id="theme-toggle"><i class="fas fa-moon"></i></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contact Form Section -->
+  <section class="contact-section">
+    <div class="contact-container">
+      <h2>Contact Me</h2>
+      <form id="contact-form">
+        <div class="form-group">
+          <i class="fas fa-user form-icon"></i>
+          <input type="text" id="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <i class="fas fa-envelope form-icon"></i>
+          <input type="email" id="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+          <i class="fas fa-tag form-icon"></i>
+          <input type="text" id="subject" placeholder="Subject" required>
+        </div>
+        <div class="form-group">
+          <i class="fas fa-comment form-icon"></i>
+          <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; iMrShadow. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Theme Toggle
+    const themeToggle = document.getElementById("theme-toggle");
+    themeToggle.addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+    });
+
+    // Form Submission Alert with Theme Matching
+    const contactForm = document.getElementById("contact-form");
+    contactForm.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const alertBox = document.createElement("div");
+      alertBox.textContent = "Your message has been sent! Thank you for reaching out.";
+      alertBox.style.position = "fixed";
+      alertBox.style.top = "20px";
+      alertBox.style.left = "50%";
+      alertBox.style.transform = "translateX(-50%)";
+      alertBox.style.padding = "1rem 2rem";
+      alertBox.style.backgroundColor = "var(--btn-bg-color)";
+      alertBox.style.color = "#fff";
+      alertBox.style.borderRadius = "10px";
+      alertBox.style.boxShadow = "0 4px 10px rgba(0, 0, 0, 0.2)";
+      alertBox.style.zIndex = "1000";
+      alertBox.style.opacity = "0";
+      alertBox.style.transition = "opacity 0.5s";
+
+      document.body.appendChild(alertBox);
+      setTimeout(() => alertBox.style.opacity = "1", 100);
+
+      setTimeout(() => {
+        alertBox.style.opacity = "0";
+        setTimeout(() => document.body.removeChild(alertBox), 500);
+      }, 3000);
+
+      contactForm.reset();
+    });
+  </script>
+</body>
+</html>

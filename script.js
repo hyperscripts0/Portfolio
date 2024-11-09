@@ -83,3 +83,12 @@ document.addEventListener("click", (e) => {
   void clickEffect.offsetWidth; // Trigger reflow
   clickEffect.style.animation = "click-ripple 0.4s ease-out";
 });
+
+// Form Submission (Mock Handler)
+const contactForm = document.getElementById("contact-form");
+
+contactForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  alert("Your message has been sent! Thank you for reaching out.");
+  contactForm.reset();
+});
