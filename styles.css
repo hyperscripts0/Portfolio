@@ -11,7 +11,7 @@ body {
   line-height: 1.6;
   color: var(--text-color);
   background-color: var(--bg-color);
-  overflow-y: hidden; /* Disable vertical scrolling */
+  overflow-y: scroll; /* Disable vertical scrolling */
   transition: background-color 0.3s, color 0.3s;
 }
 
